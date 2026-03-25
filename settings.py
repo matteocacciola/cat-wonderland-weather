@@ -1,18 +1,18 @@
-#setting
 from pydantic import BaseModel
 from enum import Enum
-from cat.mad_hatter.decorators import tool,hook,plugin
+from cat import plugin
 
 
 class UnitSelect(Enum):
-    a: str = 'metric'
-    b: str = 'imperial'
-    
-class WWSettings(BaseModel):
-    OpenWeather_api: str = ""
-    Temperature_unit: UnitSelect = UnitSelect.b
-    city: str = "new york"
-    
+    METRIC = "metric"
+    IMPERIAL = "imperial"
+
+
+class WonderlandWeatherSettings(BaseModel):
+    open_weather_api: str
+    temperature_unit: UnitSelect = UnitSelect.IMPERIAL
+
+
 @plugin
 def settings_schema():
-    return WWSettings.schema()
+    return WonderlandWeatherSettings.model_json_schema()

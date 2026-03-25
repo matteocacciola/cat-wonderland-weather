@@ -1,6 +1,6 @@
 # Wonderland Weather
 
-<img src="img/thumb.png" width="200">
+<img src="assets/thumb.png" width="200">
 
 Stay informed about real-time weather conditions with Wonderland Weather, the Cheshire Cat AI extension that connects to OpenWeather.
 
